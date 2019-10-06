@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- Language attribute for screen readers -->
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Movie Quiz App">
+    <!-- Link to fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather|Noto+Sans|Roboto|Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <!-- Link to css file -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Title of the webpage -->
+    <title>Movie Quiz</title>
+</head>
+
+<body>
+    <!-- Header for title and display of current question and correct count -->
+    <header role="banner" id="navbar">
+        <h1>Movie Quiz</h1>
+    </header>
+    <section role="contentinfo" id="trackCounter">
+        <span class="counter">Question 1 of 5</span>
+        <span class="counter">0 of 5 Correct</span>
+    </section>
+    </header>
+    <main role="main">
+        <section role="contentinfo">
+            <div id="startScreen">
+                <h2>Click "Start Quiz" to begin</h2>
+                <button type="button" name="next" class="button">Start Quiz</button>
+            </div>
+        </section>
+        <!-- Main part of the webpage, where questions are shown -->
+        <form id="questionsForm">
+            <fieldset class="field1 hidden">
+                <legend>What is the name of the hobbit played by Elijah Wood in the Lord of the Rings movies?</legend>
+                <div id="questionCont">
+                    <div>
+                        <input type="radio" name="answer" class="answer 1" value="firstAnswer">
+                        <label for="firstAnswer">Legolas</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 2" value="secondAnswer">
+                        <label for="firstAnswer">Frodo Baggins</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 3" value="thirdAnswer">
+                        <label for="firstAnswer">Gandalf</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 4" value="fourthAnswer">
+                        <label for="firstAnswer">Samwise Gamgee</label>
+                    </div>
+                    <button type="submit" name="submit" class="button">Submit</button>
+                </div>
+            </fieldset>
+            <fieldset class="field2 hidden">
+                <legend>Which classic thriller movie stars Roy Schieder as the police chief Martin Brody?</legend>
+                <div id="questionCont">
+                    <div>
+                        <input type="radio" name="answer" class="answer 1" value="firstAnswer">
+                        <label for="firstAnswer">Marathon Man</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 2" value="secondAnswer">
+                        <label for="firstAnswer">Blue Thunder</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 3" value="thirdAnswer">
+                        <label for="firstAnswer">Sorcerer</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 4" value="fourthAnswer">
+                        <label for="firstAnswer">Jaws</label>
+                    </div>
+                    <button type="submit" name="submit" class="button">Submit</button>
+                </div>
+            </fieldset>
+            <fieldset class="field3 hidden">
+                <legend>Which Tom Hanks movie won the Academy Award for Best Picture in 1994?</legend>
+                <div id="questionCont">
+                    <div>
+                        <input type="radio" name="answer" class="answer 1" value="firstAnswer">
+                        <label for="firstAnswer">Cast Away</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 2" value="secondAnswer">
+                        <label for="firstAnswer">Philadelphia</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 3" value="thirdAnswer">
+                        <label for="firstAnswer">Forrest Gump</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 4" value="fourthAnswer">
+                        <label for="firstAnswer">Apollo 13</label>
+                    </div>
+                    <button type="submit" name="submit" class="button">Submit</button>
+                </div>
+            </fieldset>
+            <fieldset class="field4 hidden">
+                <legend>Who directed the epic historical drama Schindler's List in 1993?</legend>
+                <div id="questionCont">
+                    <div>
+                        <input type="radio" name="answer" class="answer 1" value="firstAnswer">
+                        <label for="firstAnswer">Steven Spielberg</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 2" value="secondAnswer">
+                        <label for="firstAnswer">Martin Scorsese</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 3" value="thirdAnswer">
+                        <label for="firstAnswer">James Camron</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 4" value="fourthAnswer">
+                        <label for="firstAnswer">Christopher Nolan</label>
+                    </div>
+                    <button type="submit" name="submit" class="button">Submit</button>
+                </div>
+            </fieldset>
+            <fieldset class="field5 hidden">
+                <legend>What is the highest grossing movie of all time?</legend>
+                <div id="questionCont">
+                    <div>
+                        <input type="radio" name="answer" class="answer 1" value="firstAnswer">
+                        <label for="firstAnswer">A: Avenger's EndGame</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 2" value="secondAnswer">
+                        <label for="firstAnswer">B: Avatar</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 3" value="thirdAnswer">
+                        <label for="firstAnswer">C: Titanic</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="answer" class="answer 4" value="fourthAnswer">
+                        <label for="firstAnswer">D: Jurassic World</label>
+                    </div>
+                    <button type="submit" name="submit" class="button">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+        <!-- Displayed if user gets questions wrong -->
+        <section role="contentinfo" class="hidden">
+            <div class="container wrongAnswer">
+                <h2>Sorry, that was the wrong answer</h2>
+                <p>The right answer was <strong>"A: Avenger's Endgame"</strong>
+                </p>
+                <button type="button" name="next" class="button">Next</button>
+            </div>
+        </section>
+        <!-- Displayed if user gets question right -->
+        <section role="contentinfo" id="right" class="hidden">
+            <div class="container rightAnswer">
+                <h2>That is Correct!</h2>
+                <button type="button" name="next" class="button">Next</button>
+            </div>
+        </section>
+        <!-- Displayed at the end of the quiz -->
+        <section role="contentinfo" class="hidden">
+            <div class="container finalScore">
+                <h2>You got 5 of 5 answers right!</h2>
+                <p>Click restart if you would like to try again</p>
+                <button type="reset" name="reset" class="button">Restart</button>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

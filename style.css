@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    padding:0;
+}
+.hidden{
+    display:none;
+}
+/* Background colors */
+.counter{
+    background:rgba(230, 228, 228, 0.993);
+    border:1px solid black;
+}
+body{
+    background: rgb(218, 235, 245)
+}
+.wrongAnswer{
+    border:2px solid red;
+    background:rgba(243, 173, 184, 0.39)
+}
+.rightAnswer{
+    border:2px solid green;
+    background: rgba(133, 218, 133, 0.39);
+}
+.finalScore, #startScreen{
+   border: 2px solid Black;
+   background:rgba(159, 171, 240, 0.39);
+}
+/* Fonts, Font sizes, and Font-weights */
+ #navbar{
+    font-family: Merriweather, sans-serif;
+ }
+ #trackCounter{
+    font-size: 1.2em;
+    font-family: Roboto, sans-serif;
+ }
+ #questionsForm legend{
+     font-size: 1.1em;
+     font-weight: 600;
+    font-family: roboto slab, sans-serif;
+}
+#questionCont label{
+    font-family: roboto,sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+.container{
+    font-family: lato sans-serif;
+    font-weight:400;
+}
+p{
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.button{
+    font-family: lato,sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+/* Main layout */
+@media screen and (min-width:320px){
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #startScreen{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #trackCounter{
+        display:flex;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        margin-bottom: 2em;
+    }
+    .counter{
+        margin:0 .5em 0 .5em;
+    }
+    #questionsForm{
+        width:95%;
+        margin:0 auto 2em auto;
+    }
+    #questionCont .answer{
+        margin:1em  0 1em 1em;
+    }
+    .button{
+        height:2em;
+        width:5em;
+        border-radius: 10%;
+        margin:1em;
+    }
+     .container{
+        display:flex;
+        flex-direction: column;
+        margin:2em auto 2em auto;
+    }
+    .container h2, p, .button{
+        margin:.3em;
+    }
+}
+
+@media screen and (min-width:700px){
+    #questionsForm legend{
+        margin:0 auto;
+    }
+    #questionCont {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container{
+        align-items: center;
+    }
+}
