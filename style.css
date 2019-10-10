@@ -6,35 +6,38 @@
     display:none;
 }
 /* Background colors */
-.counter{
-    background:rgba(230, 228, 228, 0.993);
+#navbar{
+    background:rgba(230, 228, 228, 0.705);
     border:1px solid black;
 }
 body{
-    background: rgb(218, 235, 245)
+    background-image: url(./images/largemovies2.jpg);
+    background-position: cover;
 }
-.wrongAnswer{
+#js-wrong{
     border:2px solid red;
-    background:rgba(243, 173, 184, 0.39)
+    background:rgba(243, 173, 184, 0.705)
 }
-.rightAnswer{
+#js-right{
     border:2px solid green;
-    background: rgba(133, 218, 133, 0.39);
+    background: rgba(133, 218, 133, 0.705);
 }
-.js-finalScore, #startScreen{
+#js-finalScore, #js-startScreen{
    border: 2px solid Black;
-   background:rgba(159, 171, 240, 0.39);
+   background:rgba(159, 171, 240, 0.705);
+}
+#js-questionsForm{
+   background:rgba(176, 193, 211, 0.705);
+   border-radius: 3%;
 }
 /* Fonts, Font sizes, and Font-weights */
  #navbar{
     font-family: Merriweather, sans-serif;
  }
- #trackCounter{
-    font-size: 1.2em;
+ .counter{
     font-family: Roboto, sans-serif;
  }
- #questionsForm legend{
-     font-size: 1.1em;
+ #js-questionsForm legend{
      font-weight: 600;
     font-family: roboto slab, sans-serif;
 }
@@ -48,7 +51,6 @@ body{
     font-weight:400;
 }
 p{
-    font-size: 1.1em;
     font-weight: 600;
 }
 .button{
@@ -57,59 +59,96 @@ p{
     font-weight: bold;
 }
 /* Main layout */
-@media screen and (min-width:320px){
+@media only screen and (min-width:320px){
     #navbar{
+        text-align: center;
+    }
+    .counter{
+        font-size:1.1em;
+    }
+    .container{
+        height:150px;
+    }
+    #js-startScreen, #js-right, #js-wrong, #js-finalScore, #js-questionsForm{
+        margin-top:6em;
+    }
+    #js-startScreen .container{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #navbar section{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+    .counter{
+        margin-left:1em;
+        margin-right:1em;
+    }
+
+    #js-questionsForm legend{
+        font-size:1.1em;
+        text-align: center;
+    }
+    #questionCont {
+        text-align: center;
+        margin:1em 0 1em 0;
+    }
+    #questionCont input{
+        margin:2em 0 0 0;
+    }
+    #js-wrong h2{
+        font-size:1.2em;
+        margin-bottom:1em;
+    }
+     #js-wrong p{
+        font-size: 1.1em;
+    }
+    #js-finalScore h2{
+        font-size:1.2em;
+        margin-bottom:1em;
+    }
+    .container{
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding:5%;
     }
-    #startScreen{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #trackCounter{
-        display:flex;
-        justify-content: space-between;
-        border-bottom: 1px solid black;
-        margin-bottom: 2em;
-    }
-    .counter{
-        margin:0 .5em 0 .5em;
-    }
-    #questionsForm{
-        width:95%;
-        margin:0 auto 2em auto;
-    }
-    #questionCont .answer{
-        margin:1em  0 1em 1em;
-    }
-    .button{
+    button{
+        margin-top:2em;
+        width:6em;
         height:2em;
-        width:5em;
-        border-radius: 10%;
-        margin:1em;
-    }
-     .container{
-        display:flex;
-        flex-direction: column;
-        margin:2em auto 2em auto;
-    }
-    .container h2, p, .button{
-        margin:.3em;
+        border-radius: 2%;
     }
 }
 
-@media screen and (min-width:700px){
-    #questionsForm legend{
-        margin:0 auto;
+@media only screen and (min-width:700px){
+
+    #js-right, #js-wrong, #js-startScreen, #js-finalScore, #js-questionsForm{
+        width:70%;
+        margin-left:auto;
+        margin-right:auto;
     }
-    #questionCont {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
+    .counter{
+        font-size:1.4em;
     }
-    .container{
-        align-items: center;
+    #js-wrong h2{
+        font-size:1.4em;
+    }
+    #js-wrong p{
+        font-size: 1.4em;
+    }
+    #js-finalScore h2{
+        font-size:1.4em;
+    }
+    #js-finalScore p{
+         font-size: 1.4em;
+    }
+    #js-questionsForm legend{
+        font-size: 1.3em;
+    }
+    #questionCont label{
+        font-size: 1.3em;
     }
 }

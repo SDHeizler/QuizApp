@@ -32,7 +32,7 @@ const questionsArray = {
             text: "Who directed the epic historical drama Schindler's List in 1993 ?",
             options: ['Steven Spielberg', 'Martin Scorsese', 'James Camron', 'Christopher Nolan'],
             answer: 'firstAnswer',
-            explaination: 'The answer was: "Steven Spileberg"',
+            explaination: 'The answer was: "Steven Spielberg"',
             questionOrder: 5
         }
 
@@ -47,25 +47,22 @@ let score = questionsArray.score;
 let questionsArr = questionsArray.questions;
 
 // Start the Quiz
-$('#startScreen').on('click', function () {
-    $('#startScreen').hide();
-    $('#questionsForm').toggle('.hidden');
+$('#js-startScreen').on('click', function () {
+    $('#js-startScreen').hide(300);
+    $('#js-questionsForm').show(300);
+    $('.counter').show();
 })
 // Displays Question
 function displayQuestion() {
     let question;
-    if (questionNumber === 6) {
-        return finalScore();
-    } else {
-        questionsArr.map(function (element) {
-            if (element.questionOrder === questionNumber) {
-                question = element.text;
-                $('.js-question').html(question);
-            }
-        });
-    }
-};
+    questionsArr.map(function (element) {
+        if (element.questionOrder === questionNumber) {
+            question = element.text;
+            $('#js-question').html(question);
+        }
+    });
 
+};
 
 // Gets the options from the array
 function getOptions() {
@@ -79,6 +76,7 @@ function getOptions() {
 };
 // Displays the options from the array
 function displayOptions(arr) {
+    $('input[name="answer"]').prop('checked', false);
     let displayOption = [
         { A: $('.js-answer1').html(arr[0]) },
         { B: $('.js-answer2').html(arr[1]) },
@@ -90,9 +88,9 @@ function displayOptions(arr) {
 // If user gets answer right
 function correctAnswer() {
     score++;
-    $('form').toggle('.hidden');
-    $('#js-right').toggle('.hidden');
-    $('.js-trackCorrect').html(`${score} of 5 Correct`);
+    $('form').hide(300);
+    $('#js-right').show(300);
+    $('#js-trackCorrect').html(`${score} of 5 Correct`);
 };
 
 // Tells the user they had the incorrect answer and gives the user the correct answer
@@ -103,29 +101,38 @@ function wrongAnswer() {
             answer = element.explaination;
         };
     })
-    $('form').toggle('.hidden');
-    $('#js-wrong').toggle('hidden');
-    $('#js-wrong p').html(`Sorry, ${answer}`);
+    $('form').hide(300);
+    $('#js-wrong').show(300);
+    $('#js-wrong p').html(`${answer}`);
 };
 
 //Iterates to next question and displays the question number
 function nextQuestion() {
     $('#js-wrong').on('click', function () {
         questionNumber++;
-        displayQuestion();
-        displayOptions(getOptions());
-        $('#js-wrong').toggle('.hidden');
-        $('form').toggle('.hidden');
-        $('.js-counter').html(`Question ${questionNumber} of 5`);
+        if (questionNumber > 5) {
+            return finalScore();
+        } else {
+            displayQuestion();
+            displayOptions(getOptions());
+            $('#js-wrong').hide(300);
+            $('form').show(300);
+            $('#js-counter').html(`Question ${questionNumber} of 5`);
+        };
     });
     $('#js-right').on('click', function () {
         questionNumber++;
-        displayQuestion();
-        displayOptions(getOptions());
-        $('#js-right').toggle('.hidden');
-        $('form').toggle('.hidden');
-        $('.js-counter').html(`Question ${questionNumber} of 5`);
+        if (questionNumber > 5) {
+            return finalScore();
+        } else {
+            displayQuestion();
+            displayOptions(getOptions());
+            $('#js-right').hide(300);
+            $('form').show(300);
+            $('#js-counter').html(`Question ${questionNumber} of 5`);
+        };
     });
+
 
 }
 
@@ -137,34 +144,40 @@ function displayAnswer() {
         event.preventDefault();
         questionsArr.map(function (element) {
             if (element.questionOrder === questionNumber) {
-                if (userAnswer === element.answer) {
-                    return $(correctAnswer());
+                if (userAnswer === undefined) {
+                    return;
+                } else if (userAnswer === element.answer) {
+                    return correctAnswer();
                 } else {
-                    return $(wrongAnswer());
+                    return wrongAnswer();
                 }
             };
         });
     });
 };
 
-// Displays the how many questions the user got right and asks the user if they want to restart the quiz
+// Displays the how many questions the user got right
 function finalScore() {
     $('form').hide(300);
     $('#js-wrong').hide(300);
     $('#js-right').hide(300);
-    $('.js-finalScore').show(300);
-    $('.js-finalScore h2').html(`You got ${score} of 5 right!`);
-    $('.js-finalScore button').on('click', function () {
+    $('#js-finalScore').show(300);
+    $('#js-finalScore h2').html(`You got ${score} of 5 right!`);
+};
+
+// Restarts Quiz
+function restartQuiz() {
+    $('#js-finalScore button').on('click', function () {
         score = 0;
         questionNumber = 1;
-        $('.js-trackCorrect').html(`${score} of 5 Correct`);
-        $('.js-counter').html(`Question ${questionNumber} of 5`);
+        $('#js-trackCorrect').html(`${score} of 5 Correct`);
+        $('#js-counter').html(`Question ${questionNumber} of 5`);
         displayQuestion();
         displayOptions(getOptions());
-        $('.js-finalScore').hide(300);
-        $('#startScreen').show(300);
-
-    })
+        $('#js-finalScore').hide(300);
+        $('.counter').hide();
+        $('#js-startScreen').show(300);
+    });
 };
 
 function startQuiz() {
@@ -172,7 +185,7 @@ function startQuiz() {
     displayOptions(getOptions());
     nextQuestion();
     displayAnswer();
+    restartQuiz();
 
 };
 $(startQuiz);
-
