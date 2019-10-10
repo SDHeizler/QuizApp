@@ -24,7 +24,7 @@
     </header>
     <section role="contentinfo" id="trackCounter">
         <span class="counter js-counter">Question 1 of 5</span>
-        <span class="counter js-right">0 of 5 Correct</span>
+        <span class="counter js-trackCorrect">0 of 5 Correct</span>
     </section>
     </header>
     <main role="main">
@@ -35,7 +35,7 @@
             </div>
         </section>
         <!-- Main part of the webpage, where questions are shown -->
-        <form id="questionsForm" class="">
+        <form id="questionsForm" class="hidden">
             <fieldset class="field1 ">
                 <legend class="js-question">Question</legend>
                 <div id="questionCont">
@@ -55,12 +55,12 @@
                         <input type="radio" name="answer" class="answer 4" value="fourthAnswer">
                         <label class="js-answer4" for="firstAnswer">Answer4</label>
                     </div>
-                    <button type="submit" name="submit" class="button">Submit</button>
+                    <button type="submit" name="submit" class="button submit">Submit</button>
                 </div>
             </fieldset>
         </form>
         <!-- Displayed if user gets questions wrong -->
-        <section role="contentinfo" id="wrong" class="hidden">
+        <section role="contentinfo" id="js-wrong" class="hidden">
             <div class="container wrongAnswer">
                 <h2>Sorry, that was the wrong answer</h2>
                 <p>The right answer was <strong>"A: Avenger's Endgame"</strong>
@@ -69,18 +69,18 @@
             </div>
         </section>
         <!-- Displayed if user gets question right -->
-        <section role="contentinfo" id="right" class="hidden">
+        <section role="contentinfo" id="js-right" class="hidden">
             <div class="container rightAnswer">
                 <h2>That is Correct!</h2>
                 <button type="button" name="next" class="button right">Next</button>
             </div>
         </section>
         <!-- Displayed at the end of the quiz -->
-        <section role="contentinfo" class="hidden">
-            <div class="container finalScore">
+        <section role="contentinfo" class="js-finalScore hidden">
+            <div class="container">
                 <h2>You got 5 of 5 answers right!</h2>
                 <p>Click restart if you would like to try again</p>
-                <button type="reset" name="reset" class="button">Restart</button>
+                <button type="button" name="reset" class="button">Restart</button>
             </div>
         </section>
     </main>

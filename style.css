@@ -21,7 +21,7 @@ body{
     border:2px solid green;
     background: rgba(133, 218, 133, 0.39);
 }
-.finalScore, #startScreen{
+.js-finalScore, #startScreen{
    border: 2px solid Black;
    background:rgba(159, 171, 240, 0.39);
 }
