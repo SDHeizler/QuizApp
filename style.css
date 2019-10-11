@@ -5,69 +5,22 @@
 .hidden{
     display:none;
 }
-/* Background colors */
-#navbar{
-    background:rgba(230, 228, 228, 0.411);
-    border:1px solid black;
-}
-body{
-    background-image: url(./images/largemovies2.jpg);
-    background-position: cover;
-}
-#js-wrong{
-    border:2px solid red;
-    background:rgba(243, 173, 184, 0.650);
-   
-}
-#js-right{
-    border:2px solid green;
-    background: rgba(133, 218, 133, 0.650);
-    
-}
-#js-finalScore, #js-startScreen{
-   border: 2px solid Black;
-   background:rgba(159, 171, 240, 0.650);
-   
-}
-#js-questionsForm{
-   background:rgba(176, 193, 211, 0.650);
-   border-radius: 3%;
-}
-/* Fonts, Font sizes, and Font-weights */
- #navbar{
-    font-family: Merriweather, sans-serif;
- }
- .counter{
-    font-family: Roboto, sans-serif;
- }
- #js-questionsForm legend{
-     font-weight: 600;
-    font-family: roboto slab, sans-serif;
-}
-#questionCont label{
-    font-family: roboto,sans-serif;
-    font-size: 1em;
-    font-weight: 600;
-}
-.container{
-    font-family: lato sans-serif;
-    font-weight:400;
-}
-p{
-    font-weight: 600;
-}
-.button{
-    font-family: lato,sans-serif;
-    font-size: 1em;
-    font-weight: bold;
-}
+
 /* Main layout */
 @media only screen and (min-width:320px){
     #navbar{
-        text-align: center;
+    font-family: Merriweather, sans-serif;
+    text-align: center;
+    background:rgba(230, 228, 228, 0.411);
+    border:1px solid black;
+    }
+    body{
+    background-image: url(./images/largemovies2.jpg);
+    background-position: cover;
     }
     .counter{
         font-size:1.1em;
+        font-family: Roboto, sans-serif;
     }
     .container{
         height:150px;
@@ -89,8 +42,13 @@ p{
         margin-left:1em;
         margin-right:1em;
     }
-
+    #js-questionsForm{
+        background:rgba(176, 193, 211, 0.650);
+        border-radius: 3%;
+    }
     #js-questionsForm legend{
+        font-weight: 600;
+        font-family: roboto slab, sans-serif;
         font-size:1.1em;
         text-align: center;
     }
@@ -98,8 +56,17 @@ p{
         text-align: center;
         margin:1em 0 1em 0;
     }
+    #questionCont label{
+    font-family: roboto,sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    }
     #questionCont input{
         margin:2em 0 0 0;
+    }
+    #js-wrong{
+    border:2px solid red;
+    background:rgba(243, 173, 184, 0.650);
     }
     #js-wrong h2{
         font-size:1.2em;
@@ -108,21 +75,39 @@ p{
      #js-wrong p{
         font-size: 1.1em;
     }
+    #js-right{
+    border:2px solid green;
+    background: rgba(133, 218, 133, 0.650);
+    
+    }
+    #js-finalScore, #js-startScreen{
+   border: 2px solid Black;
+   background:rgba(159, 171, 240, 0.650);
+   
+    }
     #js-finalScore h2{
         font-size:1.2em;
         margin-bottom:1em;
     }
     .container{
+        font-family: lato sans-serif;
+        font-weight:400;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding:5%;
     }
     button{
+         font-family: lato,sans-serif;
+        font-size: 1em;
+        font-weight: bold;
         margin-top:2em;
         width:6em;
         height:2em;
         border-radius: 2%;
+    }
+    p{
+    font-weight: 600;
     }
 }
 
