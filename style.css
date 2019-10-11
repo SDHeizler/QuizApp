@@ -7,7 +7,7 @@
 }
 /* Background colors */
 #navbar{
-    background:rgba(230, 228, 228, 0.705);
+    background:rgba(230, 228, 228, 0.411);
     border:1px solid black;
 }
 body{
@@ -16,18 +16,21 @@ body{
 }
 #js-wrong{
     border:2px solid red;
-    background:rgba(243, 173, 184, 0.705)
+    background:rgba(243, 173, 184, 0.650);
+   
 }
 #js-right{
     border:2px solid green;
-    background: rgba(133, 218, 133, 0.705);
+    background: rgba(133, 218, 133, 0.650);
+    
 }
 #js-finalScore, #js-startScreen{
    border: 2px solid Black;
-   background:rgba(159, 171, 240, 0.705);
+   background:rgba(159, 171, 240, 0.650);
+   
 }
 #js-questionsForm{
-   background:rgba(176, 193, 211, 0.705);
+   background:rgba(176, 193, 211, 0.650);
    border-radius: 3%;
 }
 /* Fonts, Font sizes, and Font-weights */
@@ -143,7 +146,7 @@ p{
         font-size:1.4em;
     }
     #js-finalScore p{
-         font-size: 1.4em;
+        font-size: 1.4em;
     }
     #js-questionsForm legend{
         font-size: 1.3em;
